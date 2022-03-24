@@ -8,7 +8,7 @@ namespace Exercice_Gestion_Bibliothèque
 {
     internal class Class1
     {
-
+        string test;
 
     }
 }
