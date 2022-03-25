@@ -1,6 +1,6 @@
 ﻿namespace Exercice_Gestion_Bibliothèque
 {
-    partial class Form1
+    partial class Abonne
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,7 +35,7 @@
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Date_Sortie");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Date_Retour");
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Usure");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Abonne));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
