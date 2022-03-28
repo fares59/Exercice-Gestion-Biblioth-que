@@ -48,5 +48,6 @@ namespace Exercice_Gestion_Bibliothèque
             return "Nom : " + nom + " prenom : " + prenom + " email : " + email;
         }
 
+
     }
 }
