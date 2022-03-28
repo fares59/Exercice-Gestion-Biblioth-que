@@ -28,5 +28,12 @@ namespace Exercice_Gestion_Bibliothèque
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            emprunt_usercontrol Emprunt_usercontrol = new emprunt_usercontrol();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(Emprunt_usercontrol);
+        }
     }
 }
