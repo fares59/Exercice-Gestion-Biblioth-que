@@ -10,6 +10,8 @@ namespace Exercice_Gestion_Bibliothèque
     {
         private string nom = "";
         private string prenom = "";
+        public string Nom { get => nom; set => nom = value; }
+        public string Prenom { get => prenom; set => prenom = value; }
 
         public auteur()
         {
@@ -21,7 +23,7 @@ namespace Exercice_Gestion_Bibliothèque
             this.prenom = prenom;
         }
 
-        public string Nom { get => nom; set => nom = value; }
-        public string Prenom { get => prenom; set => prenom = value; }
+
+
     }
 }
