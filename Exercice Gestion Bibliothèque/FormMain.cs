@@ -28,5 +28,12 @@ namespace Exercice_Gestion_Bibliothèque
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            VueAbonneUserControl vueabonneUserControl = new VueAbonneUserControl();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(vueabonneUserControl);
+        }
     }
 }
