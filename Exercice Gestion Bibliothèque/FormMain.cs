@@ -26,7 +26,9 @@ namespace Exercice_Gestion_Bibliothèque
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AjoutLivreUserControl1 ajoutLivreUserControl1 = new AjoutLivreUserControl1();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(ajoutLivreUserControl1);
         }
     }
 }
