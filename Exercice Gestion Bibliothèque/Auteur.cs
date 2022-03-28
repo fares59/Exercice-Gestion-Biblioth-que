@@ -23,9 +23,11 @@ namespace Exercice_Gestion_Bibliothèque
             this.prenom = prenom;
         }
 
-        public override string toString()
+        public override string ToString()
         {
             string tostring = "nom" + nom + "prenom" + prenom;
+
+            return tostring;
         }
 
 
