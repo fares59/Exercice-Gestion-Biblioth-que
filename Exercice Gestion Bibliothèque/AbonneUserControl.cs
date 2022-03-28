@@ -16,5 +16,10 @@ namespace Exercice_Gestion_Bibliothèque
         {
             InitializeComponent();
         }
+
+        private void button_inscription_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
