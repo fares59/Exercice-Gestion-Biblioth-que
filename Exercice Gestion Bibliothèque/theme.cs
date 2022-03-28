@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Exercice_Gestion_Bibliothèque
 {
-    internal class theme
+    internal class Theme
     {
         private string titre = "";
         public string Titre { get => titre; set => titre = value; }
 
-        public theme()
+        public Theme()
         {
+
         }
 
-        public theme(string titre)
+        public Theme(string titre)
         {
             this.titre = titre;
         }
