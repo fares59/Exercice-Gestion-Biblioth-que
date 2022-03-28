@@ -24,6 +24,11 @@ namespace Exercice_Gestion_Bibliothèque
             this.titre = titre;
             this.ISBC = iSBC;
         }
+
+        public override string toString()
+        {
+            string tostring = "titre" + titre + "ISBC" + ISBC;
+        }
     }
 
 

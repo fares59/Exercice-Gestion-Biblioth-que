@@ -13,13 +13,15 @@ namespace Exercice_Gestion_Bibliothèque
 
         public Theme()
         {
-
         }
 
         public Theme(string titre)
         {
             this.titre = titre;
         }
-
+        public override string toString()
+        {
+            string tostring = "titre" + titre;
+        }
     }
 }
