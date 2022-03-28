@@ -13,5 +13,8 @@ namespace Exercice_Gestion_Bibliothèque
             ApplicationConfiguration.Initialize();
             Application.Run(new FormMain());
         }
+
+
+
     }
 }
