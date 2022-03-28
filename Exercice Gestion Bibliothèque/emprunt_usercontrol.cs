@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Exercice_Gestion_Bibliothèque
 {
-    public partial class AbonneUserControl : UserControl
+    public partial class emprunt_usercontrol : UserControl
     {
-        public AbonneUserControl()
+        public emprunt_usercontrol()
         {
             InitializeComponent();
-        }
-
-        private void button_inscription_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

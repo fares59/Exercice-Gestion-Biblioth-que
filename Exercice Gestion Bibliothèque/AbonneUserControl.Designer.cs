@@ -123,6 +123,7 @@
             this.button_inscription.TabIndex = 30;
             this.button_inscription.Text = "Inscription";
             this.button_inscription.UseVisualStyleBackColor = true;
+            this.button_inscription.Click += new System.EventHandler(this.button_inscription_Click);
             // 
             // textBox5
             // 
@@ -159,7 +160,7 @@
             this.textBox1.Size = new System.Drawing.Size(246, 23);
             this.textBox1.TabIndex = 25;
             // 
-            // UserControl1
+            // AbonneUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +178,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "UserControl1";
+            this.Name = "AbonneUserControl";
             this.Size = new System.Drawing.Size(772, 382);
             this.ResumeLayout(false);
             this.PerformLayout();
