@@ -35,9 +35,6 @@
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Titre");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Date_Sortie");
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Usure");
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.button5 = new System.Windows.Forms.Button();
@@ -55,7 +52,7 @@
             listViewItem2,
             listViewItem3,
             listViewItem4});
-            this.listView1.Location = new System.Drawing.Point(185, 136);
+            this.listView1.Location = new System.Drawing.Point(186, 179);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(397, 147);
             this.listView1.TabIndex = 20;
@@ -69,7 +66,7 @@
             listViewItem5,
             listViewItem6,
             listViewItem7});
-            this.listView2.Location = new System.Drawing.Point(185, 310);
+            this.listView2.Location = new System.Drawing.Point(186, 353);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(397, 84);
             this.listView2.TabIndex = 19;
@@ -78,7 +75,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(654, 68);
+            this.button5.Location = new System.Drawing.Point(655, 111);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 23);
             this.button5.TabIndex = 18;
@@ -87,7 +84,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(518, 68);
+            this.button4.Location = new System.Drawing.Point(519, 111);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 23);
             this.button4.TabIndex = 17;
@@ -96,7 +93,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(22, 68);
+            this.button3.Location = new System.Drawing.Point(23, 111);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 23);
             this.button3.TabIndex = 16;
@@ -105,14 +102,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(518, 25);
+            this.textBox1.Location = new System.Drawing.Point(519, 68);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 23);
             this.textBox1.TabIndex = 15;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(770, 25);
+            this.button2.Location = new System.Drawing.Point(771, 68);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 23);
             this.button2.TabIndex = 14;
@@ -138,10 +135,6 @@
         }
 
         #endregion
-
-        private FontDialog fontDialog1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private PageSetupDialog pageSetupDialog1;
         private ListView listView1;
         private ListView listView2;
         private Button button5;
