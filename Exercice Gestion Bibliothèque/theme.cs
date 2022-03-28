@@ -19,9 +19,11 @@ namespace Exercice_Gestion_Bibliothèque
         {
             this.titre = titre;
         }
-        public override string toString()
+        public override string ToString()
         {
-            string tostring = "titre" + titre;
+            string toString = "titre" + titre;
+
+            return toString;
         }
     }
 }
