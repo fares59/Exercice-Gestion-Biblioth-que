@@ -42,7 +42,7 @@ namespace Exercice_Gestion_Bibliothèque
             }
             if (!livre.Auteurs.Contains(this))
             {
-                livre.Auteurse.Add(this);
+                livre.Auteurs.Add(this);
             }
         }
 

@@ -9,8 +9,11 @@ namespace Exercice_Gestion_Bibliothèque
     internal class Theme
     {
         private string titre = "";
+
+        List<Livre> livres = new();
         public string Titre { get => titre; set => titre = value; }
 
+        internal List<Livre> Livres { get => livres; set => livres = value; }
         public Theme()
         {
         }
@@ -24,6 +27,18 @@ namespace Exercice_Gestion_Bibliothèque
             string toString = "titre" + titre;
 
             return toString;
+        }
+
+        public void AddLivre(Livre livre)
+        {
+            if (!livres.Contains(livre))
+            {
+                livres.Add(livre);
+            }
+            if (!livre.Themes.Contains(this))
+            {
+                livre.Themes.Add(this);
+            }
         }
     }
 }
