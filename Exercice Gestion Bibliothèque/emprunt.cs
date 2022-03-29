@@ -11,7 +11,7 @@ namespace Exercice_Gestion_Bibliothèque
             // Initialisation des variables
             private string date_emprunt;
             private string date_sortie;
-            private bool deleted;
+            private bool deleted = false;
 
         public DateTime Date_emprunt { get => DateTime.Parse(date_emprunt); set => date_emprunt = value.ToString("yyyy-MM-dd"); }
         public DateTime Date_sortie { get => DateTime.Parse(date_sortie); set => date_sortie = value.ToString("yyyy-MM-dd"); }
@@ -19,14 +19,15 @@ namespace Exercice_Gestion_Bibliothèque
 
 
 
-        public  Emprunt(string emprunt, string sortie,bool delete)
+        public  Emprunt(string emprunt, string sortie)
             {
                 date_emprunt = emprunt;
                 date_sortie = sortie;
-                deleted = delete;
 
                 
             }
+
+        public Emprunt() { }
 
 
         public override string ToString()
