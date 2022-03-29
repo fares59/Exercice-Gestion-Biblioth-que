@@ -40,8 +40,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.prenomTextBox = new System.Windows.Forms.TextBox();
+            this.nomTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label7
@@ -146,19 +146,19 @@
             this.textBox3.Size = new System.Drawing.Size(246, 23);
             this.textBox3.TabIndex = 27;
             // 
-            // textBox2
+            // prenomTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(281, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 23);
-            this.textBox2.TabIndex = 26;
+            this.prenomTextBox.Location = new System.Drawing.Point(281, 114);
+            this.prenomTextBox.Name = "prenomTextBox";
+            this.prenomTextBox.Size = new System.Drawing.Size(246, 23);
+            this.prenomTextBox.TabIndex = 26;
             // 
-            // textBox1
+            // nomTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 23);
-            this.textBox1.TabIndex = 25;
+            this.nomTextBox.Location = new System.Drawing.Point(281, 70);
+            this.nomTextBox.Name = "nomTextBox";
+            this.nomTextBox.Size = new System.Drawing.Size(246, 23);
+            this.nomTextBox.TabIndex = 25;
             // 
             // AbonneUserControl
             // 
@@ -176,8 +176,8 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.prenomTextBox);
+            this.Controls.Add(this.nomTextBox);
             this.Name = "AbonneUserControl";
             this.Size = new System.Drawing.Size(772, 382);
             this.ResumeLayout(false);
@@ -199,7 +199,7 @@
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox prenomTextBox;
+        private TextBox nomTextBox;
     }
 }
