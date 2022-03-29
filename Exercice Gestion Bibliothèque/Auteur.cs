@@ -10,18 +10,13 @@ namespace Exercice_Gestion_Bibliothèque
     {
         private string nom = "";
         private string prenom = "";
-        private bool deleted;
 
-        List<Livre> livres = new ();
+        //List<Livre> livres = new ();
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
 
-        internal List<Livre> Livres { get => livres; set => livres = value; }
-        public Auteur()
-        {
-        }
-
-        public Auteur(string nom, string prenom, bool _deleted)
+        //internal List<Livre> Livres { get => livres; set => livres = value; }
+        public Auteur(string nom, string prenom)
         {
             this.nom = nom;
             this.prenom = prenom;
@@ -34,17 +29,17 @@ namespace Exercice_Gestion_Bibliothèque
             return tostring;
         }
 
-        public void AddLivre(Livre livre)
-        {
-            if (!livres.Contains(livre))
-            {
-                livres.Add(livre);
-            }
-            if (!livre.Auteurs.Contains(this))
-            {
-                livre.Auteurs.Add(this);
-            }
-        }
+        //public void AddLivre(Livre livre)
+        //{
+        //    if (!livres.Contains(livre))
+        //    {
+        //        livres.Add(livre);
+        //    }
+        //    if (!livre.Auteurs.Contains(this))
+        //    {
+        //        livre.Auteurs.Add(this);
+        //    }
+        //}
 
     }
 }
