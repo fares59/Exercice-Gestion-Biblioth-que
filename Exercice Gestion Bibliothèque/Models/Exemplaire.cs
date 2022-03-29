@@ -44,9 +44,32 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 }
             }
         }
-        Livre Livre { get; set; }
 
-        [JsonProperty(PropertyName = "id_usure")]
+        [JsonIgnore]
+        private Livre livre;
+        public Livre Livre
+        {
+            get
+            {
+                if (this.livre == null)
+                {
+                    livre = Livre.jDA.GetById(this.idLivre);
+                }
+                return livre;
+            }
+            set
+            {
+                if (this.idLivre != value?.Id)
+                {
+                    Livre?.RemoveExemplaire(this);
+                    this.idLivre = (int)(value?.Id);
+                    this.livre = null; //need to reset Livre get
+                    Livre?.AddExemplaire(this);
+                }
+            }
+        }
+
+            [JsonProperty(PropertyName = "id_usure")]
         private int idUsure;
         public int IdUsure
         {

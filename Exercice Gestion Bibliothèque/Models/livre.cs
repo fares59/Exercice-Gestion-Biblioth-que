@@ -53,7 +53,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             if (this.ExemplairesList.Find(item => item.Id == exemplaire.Id) == null)
             {
                 this.ExemplairesList.Add(exemplaire);
-                if (exemplaire.Livre.Id != this.Id)
+                if (exemplaire.IdLivre != this.Id)
                 {
                     exemplaire.Livre = this;
                 }
