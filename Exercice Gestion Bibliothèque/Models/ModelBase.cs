@@ -34,7 +34,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         //DAL
-        public static DAL.JsonDataAcces<T> jsonDataAcces = new DAL.JsonDataAcces<T>();
+        public static DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>();
 
 
     }

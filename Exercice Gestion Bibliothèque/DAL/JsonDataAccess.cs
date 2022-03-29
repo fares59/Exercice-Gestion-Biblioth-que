@@ -46,7 +46,7 @@ namespace Exercice_Gestion_Bibliothèque.DAL
             return filter != null ? list.FindAll(filter) : list;
         }
 
-        public T? GetById(int id)
+        public T? GetById(int? id)
         {
             return id > 0 ? GetAll(item => item.Id == id).First() : null;
         }

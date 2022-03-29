@@ -9,8 +9,16 @@ namespace Exercice_Gestion_Bibliothèque.Models
     internal class Editeur
     {
         private string nom;
-
-        public string Nom { get => nom; set => nom = value; }
+        public string Nom {
+            get { return nom; }
+            set
+            {
+                if (this.nom != value)
+                {
+                    this.nom = value;
+                }
+            }
+        }
         public Editeur()
         {
             nom = "";
