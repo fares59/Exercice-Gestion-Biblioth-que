@@ -10,10 +10,10 @@ namespace Exercice_Gestion_Bibliothèque
     {
         private string titre = "";
 
-        List<Livre> livres = new();
+        //List<Livre> livres = new();
         public string Titre { get => titre; set => titre = value; }
 
-        internal List<Livre> Livres { get => livres; set => livres = value; }
+        //internal List<Livre> Livres { get => livres; set => livres = value; }
         public Theme()
         {
         }
@@ -29,16 +29,16 @@ namespace Exercice_Gestion_Bibliothèque
             return toString;
         }
 
-        public void AddLivre(Livre livre)
-        {
-            if (!livres.Contains(livre))
-            {
-                livres.Add(livre);
-            }
-            if (!livre.Themes.Contains(this))
-            {
-                livre.Themes.Add(this);
-            }
-        }
+        //public void AddLivre(Livre livre)
+        //{
+        //    if (!livres.Contains(livre))
+        //    {
+        //        livres.Add(livre);
+        //    }
+        //    if (!livre.Themes.Contains(this))
+        //    {
+        //        livre.Themes.Add(this);
+        //    }
+        //}
     }
 }

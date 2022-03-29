@@ -10,11 +10,7 @@ namespace Exercice_Gestion_Bibliothèque
 
     {
         private string date_reservation;
-        private bool deleted;
-
         public DateTime Date_reservation { get => DateTime.Parse(date_reservation); set => date_reservation = value.ToString("yyyy-MM-dd"); }
-        public bool Deleted { get => deleted; set => deleted = value; }
-
 
         public Reservation()
         { }

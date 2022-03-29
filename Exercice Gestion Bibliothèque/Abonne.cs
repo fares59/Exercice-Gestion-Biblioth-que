@@ -13,7 +13,6 @@ namespace Exercice_Gestion_Bibliothèque
         private string adresse;
         private string telephone;
         private string email;
-        private bool deleted;
         private string date_adhesion;
         //private DateTime date_adhesion;
         //private Category? category;
@@ -23,7 +22,6 @@ namespace Exercice_Gestion_Bibliothèque
         public string Adresse { get => adresse; set => adresse = value;}
         public string Telephone { get => telephone; set => telephone = value;}
         public string Email { get => email; set => email = value;}
-        public bool Deleted { get => deleted; set => deleted = value; }
         public DateTime Date_adhesion { get => DateTime.Parse(date_adhesion); set => date_adhesion = value.ToString("yyyy-MM-dd");}
         //internal Category? Category
         //{
@@ -44,7 +42,6 @@ namespace Exercice_Gestion_Bibliothèque
             prenom = "";
             email = "";
             telephone = "";
-            deleted = false;
             date_adhesion = DateTime.Now.ToString("yyyy-MM-dd");
 
         }

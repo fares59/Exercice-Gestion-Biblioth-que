@@ -9,18 +9,15 @@ namespace Exercice_Gestion_Bibliothèque
     internal class Category
     {
         private string titre;
-        private bool deleted;
         //private List<Abonne> abonnes = new();
 
         public string Titre { get => titre; set => titre = value; }
-        public bool Deleted { get => deleted; set => deleted = value; }
 
         //public List<Abonne> Abonnes { get => abonnes;}
 
         public Category()
         {
             this.Titre = "";
-            this.Deleted = false;
         }
         public Category(string _titre)
         {

@@ -9,14 +9,11 @@ namespace Exercice_Gestion_Bibliothèque
     internal class Editeur
     {
         private string nom;
-        private bool deleted;
 
         public string Nom { get => nom; set => nom = value; }
-        public bool Deleted { get => deleted; set => deleted = value; }
         public Editeur()
         {
             nom = "";
-            deleted = false;
 
         }
         public Editeur(string _nom)
