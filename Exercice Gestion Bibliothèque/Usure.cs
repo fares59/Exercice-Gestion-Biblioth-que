@@ -23,6 +23,7 @@ namespace Exercice_Gestion_Bibliothèque
     public string ToString()
     {
         return "Usure : " + etat ;
+
     }
 }
 }
