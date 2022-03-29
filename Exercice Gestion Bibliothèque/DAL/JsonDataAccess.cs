@@ -30,6 +30,14 @@ namespace Exercice_Gestion_Bibliothèque.DAL
                 return JsonConvert.DeserializeObject<List<T>>(jsonString);
             }
         }
+        public List<dynamic> LoadJsonData(string fileName)
+        {
+            using (StreamReader reader = new StreamReader($"JsonData/{fileName}.json"))
+            {
+                string jsonString = reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<dynamic>>(jsonString);
+            }
+        }
         private void SaveJsonData()
         {
             string className = typeof(T).Name.ToLower();

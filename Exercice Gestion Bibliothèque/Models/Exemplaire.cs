@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Exemplaire
+    internal class Exemplaire : ModelBase<Exemplaire>
     {
         private string date_achat = "";
         private string emplacement = "";

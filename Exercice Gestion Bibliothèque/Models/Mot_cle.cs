@@ -1,30 +1,80 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Mot_cle
+    internal class Mot_cle : ModelBase<Mot_cle>
     {
         private string mot;
-        //private List<Livre> livres = new();
-        public string Mot { get => mot; set => mot = value; }
-        //internal List<Livre> Livres { get => livres; set => livres = value; }
-
-        public Mot_cle()
+        public string Mot
         {
-            mot = "";
+            get { return mot; }
+            set
+            {
+                if (this.mot != value)
+                {
+                    this.mot = value;
+                }
+            }
         }
-        public Mot_cle(string _mot)
+
+        [JsonIgnore]
+        private List<int>? idLivreList;
+        public List<int> IdLivreList
         {
-            this.mot = _mot;
+            get
+            {
+                if (this.idLivreList == null)
+                {
+
+                    List<dynamic> ids = jDA.LoadJsonData("motcle_livre").FindAll(item => item.id_theme == this.Id);
+                    idLivreList = new();
+                    ids.ForEach(item =>
+                    {
+                        idLivreList.Add((int)item.id_livre);
+                    });
+                }
+                return this.idLivreList;
+            }
         }
 
-        public string ToString()
+        [JsonIgnore]
+        private List<Livre>? livreList;
+        public List<Livre> LivreList
         {
-            return mot;
+            get
+            {
+                if (this.livreList == null)
+                {
+                    this.livreList = Livre.jDA.GetAll(item => this.IdLivreList.Contains(item.Id));
+                }
+                return this.livreList;
+            }
+        }
+
+        public List<Livre> AddLivre(Livre livre)
+        {
+            if (this.LivreList.Find(item => item.Id == livre.Id) == null)
+            {
+                this.IdLivreList.Add(livre.Id);
+                this.LivreList.Add(livre);
+                livre.AddMot(this);
+                //TODO persist 
+            }
+            return this.LivreList;
+        }
+
+        public List<Livre> RemoveLivre(Livre livre)
+        {
+            int index = this.LivreList.FindIndex(item => item.Id == livre.Id);
+            if (index >= 0)
+            {
+                this.IdLivreList.Remove(livre.Id);
+                this.LivreList.RemoveAt(index);
+                livre.RemoveTheme(this);
+                //TODO persist
+            }
+            return this.LivreList;
         }
         //public void AddLivre(Livre livre)
         //{
