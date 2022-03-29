@@ -23,6 +23,7 @@ namespace Exercice_Gestion_Bibliothèque
         {
             this.titre = titre;
             this.ISBC = iSBC;
+
         }
 
         public override string ToString()
@@ -30,7 +31,7 @@ namespace Exercice_Gestion_Bibliothèque
             string ToString = "titre" + titre + "ISBC" + ISBC;
 
             return ToString;
-        }
+        } 
     }
 
 
