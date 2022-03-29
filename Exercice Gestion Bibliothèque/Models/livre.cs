@@ -134,7 +134,140 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
             return this.AuteurList;
         }
-    }
 
+        [JsonIgnore]
+        private List<int>? idThemeList;
+        public List<int> IdThemeList
+        {
+            get
+            {
+                if (this.idThemeList == null)
+                {
+
+                    List<dynamic> ids = jDA.LoadJsonData("auteur_livre").FindAll(item => item.id_livre == this.Id);
+                    idThemeList = new();
+                    ids.ForEach(item =>
+                    {
+                        idThemeList.Add((int)item.id_theme);
+                    });
+                }
+                return this.idThemeList;
+            }
+        }
+
+        [JsonIgnore]
+        private List<Theme>? themeList;
+        public List<Theme> ThemeList
+        {
+            get
+            {
+                if (this.themeList == null)
+                {
+                    this.themeList = Theme.jDA.GetAll(item => this.IdThemeList.Contains(item.Id));
+                }
+                return this.themeList;
+            }
+        }
+
+        public List<Theme> AddTheme(Theme theme)
+        {
+            if (this.ThemeList.Find(item => item.Id == theme.Id) == null)
+            {
+                this.IdThemeList.Add(theme.Id);
+                this.ThemeList.Add(theme);
+                theme.AddLivre(this);
+                //TODO persist
+            }
+            return this.ThemeList;
+        }
+
+        public List<Theme> RemoveTheme(Theme theme)
+        {
+            int index = this.ThemeList.FindIndex(item => item.Id == theme.Id);
+            if (index >= 0)
+            {
+                this.IdThemeList.Remove(theme.Id);
+                this.ThemeList.RemoveAt(index);
+                theme.RemoveLivre(this);
+                //TODO persist
+            }
+            return this.ThemeList;
+        }
+
+
+
+
+
+
+
+
+
+        [JsonIgnore]
+        private List<int>? idMotcleList;
+        public List<int> IdMotcleList
+        {
+            get
+            {
+                if (this.idMotcleList == null)
+                {
+
+                    List<dynamic> ids = jDA.LoadJsonData("auteur_livre").FindAll(item => item.id_livre == this.Id);
+                    idMotcleList = new();
+                    ids.ForEach(item =>
+                    {
+                        idMotcleList.Add((int)item.id_motcle);
+                    });
+                }
+                return this.idMotcleList;
+            }
+        }
+
+        [JsonIgnore]
+        private List<Mot_cle>? motcleList;
+        public List<Mot_cle> MotcleList
+        {
+            get
+            {
+                if (this.motcleList == null)
+                {
+                    this.motcleList = Mot_cle.jDA.GetAll(item => this.IdMotcleList.Contains(item.Id));
+                }
+                return this.MotcleList;
+            }
+        }
+
+
+
+
+
+        public List<Mot_cle> AddMotcle(Mot_cle motcle)
+        {
+            if (this.MotcleList.Find(item => item.Id == motcle.Id) == null)
+            {
+                this.IdMotcleList.Add(motcle.Id);
+                this.MotcleList.Add(motcle);
+                motcle.AddLivre(this);
+                //TODO persist
+            }
+            return this.MotcleList;
+        }
+
+
+        public List<Mot_cle> RemoveMotcle(Mot_cle motcle)
+        {
+            int index = this.ThemeList.FindIndex(item => item.Id == motcle.Id);
+            if (index >= 0)
+            {
+                this.IdMotcleList.Remove(motcle.Id);
+                this.MotcleList.RemoveAt(index);
+                motcle.RemoveLivre(this);
+                //TODO persist
+            }
+            return this.MotcleList;
+        }
+
+
+
+    }
 
 }

@@ -58,7 +58,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 this.IdLivreList.Add(livre.Id);
                 this.LivreList.Add(livre);
-                livre.AddMot(this);
+                livre.AddMotcle(this);
                 //TODO persist 
             }
             return this.LivreList;
@@ -71,7 +71,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 this.IdLivreList.Remove(livre.Id);
                 this.LivreList.RemoveAt(index);
-                livre.RemoveTheme(this);
+                livre.RemoveMotcle(this);
                 //TODO persist
             }
             return this.LivreList;
