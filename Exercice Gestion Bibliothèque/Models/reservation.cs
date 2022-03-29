@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercice_Gestion_Bibliothèque
+namespace Exercice_Gestion_Bibliothèque.Models
 {
     public class Reservation
 
