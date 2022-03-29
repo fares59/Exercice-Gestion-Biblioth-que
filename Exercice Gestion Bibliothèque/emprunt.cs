@@ -11,17 +11,21 @@ namespace Exercice_Gestion_Bibliothèque
             // Initialisation des variables
             private string date_emprunt;
             private string date_sortie;
+            private bool deleted;
 
         public DateTime Date_emprunt { get => DateTime.Parse(date_emprunt); set => date_emprunt = value.ToString("yyyy-MM-dd"); }
-            public DateTime Date_sortie { get => DateTime.Parse(date_sortie); set => date_sortie = value.ToString("yyyy-MM-dd"); }
+        public DateTime Date_sortie { get => DateTime.Parse(date_sortie); set => date_sortie = value.ToString("yyyy-MM-dd"); }
         public bool Deleted { get; set; } = false;
 
 
 
-        public  Emprunt(string emprunt, string sortie)
+        public  Emprunt(string emprunt, string sortie,bool delete)
             {
                 date_emprunt = emprunt;
                 date_sortie = sortie;
+                deleted = delete;
+
+                
             }
 
 
