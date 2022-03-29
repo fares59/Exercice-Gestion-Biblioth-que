@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercice_Gestion_Bibliothèque.Models
+﻿namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Usure
+    internal class Usure : ModelBase<Usure>
     {
         private string etat;
-
-        public Usure()
-    { 
-        etat = "";
+        public string Etat
+        {
+            get { return etat; }
+            set
+            {
+                if (this.etat != value)
+                {
+                    this.etat = value;
+                }
+            }
+        }
     }
-
-    public Usure(string _etat)
-    {
-        this.etat = _etat;
-    }
-
-    public string ToString()
-    {
-        return "Usure : " + etat ;
-
-    }
-}
 }
 
