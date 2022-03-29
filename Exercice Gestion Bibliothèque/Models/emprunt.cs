@@ -5,61 +5,62 @@ namespace Exercice_Gestion_Bibliothèque.Models
     internal class Emprunt : ModelBase<Emprunt>
     {
         [JsonProperty(PropertyName = "date_emprunt")]
-        private string? date_emprunt;
-        public DateTime Date_emprunt
+        private string? dateEmprunt;
+        public DateTime DatEmprunt
         {
-            get => DateTime.Parse(date_emprunt);
+            get => DateTime.Parse(dateEmprunt);
             set
             {
-                if (this.date_emprunt != value.ToString("yyyy-MM-dd"))
+                if (this.dateEmprunt != value.ToString("yyyy-MM-dd"))
                 {
-                    this.date_emprunt = value.ToString("yyyy-MM-dd");
+                    this.dateEmprunt = value.ToString("yyyy-MM-dd");
                 }
             }
         }
 
         [JsonProperty(PropertyName = "date_sortie")]
-        private string? date_sortie;
-        public DateTime Date_sortie
+        private string? dateSortie;
+        public DateTime DateSortie
         {
-            get => DateTime.Parse(date_sortie);
+            get => DateTime.Parse(dateSortie);
             set
             {
-                if (this.date_sortie != value.ToString("yyyy-MM-dd"))
+                if (this.dateSortie != value.ToString("yyyy-MM-dd"))
                 {
-                    this.date_sortie = value.ToString("yyyy-MM-dd");
+                    this.dateSortie = value.ToString("yyyy-MM-dd");
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_exemplaire")]
-        private int id_exemplaire;
-        public int idexemplaire
+        private int? idExemplaire;
+        public int? IdExemplaire
         {
-            get { return idexemplaire; }
+            get { return idExemplaire; }
             set
             {
-                if (this.idexemplaire != value)
+                if (this.idExemplaire != value)
                 {
-                    this.idexemplaire = value;
+                    this.idExemplaire = value;
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_abonne")]
-        private int id_abonne;
-        public int idabonne
+        private int? idAbonne;
+        public int? IdAbonne
         {
-            get { return idabonne; }
+            get { return idAbonne; }
             set
             {
-                if (this.idabonne != value)
+                if (this.idAbonne != value)
                 {
-                    this.idabonne = value;
+                    this.idAbonne = value;
                 }
             }
         }
 
+        // relation Exemplaire 1=>n
 
         [JsonIgnore]
         private Exemplaire exemplaire;
@@ -69,22 +70,91 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 if (this.exemplaire == null)
                 {
-                    exemplaire = Exemplaire.jDA.GetById(this.idexemplaire);
+                    exemplaire = Exemplaire.jDA.GetById((int)idExemplaire);
                 }
                 return exemplaire;
             }
             set
             {
-                if (this.idexemplaire != value?.Id)
+                if (this.idExemplaire != value?.Id)
                 {
                     Exemplaire?.RemoveEmprunt(this);
-                    this.idexemplaire = (int)(value?.Id);
+                    this.idExemplaire = (int)(value?.Id);
                     this.exemplaire = null; //need to reset Livre get
                     Exemplaire?.AddEmprunt(this);
                 }
             }
 
         }
+
+        // relation Abonne 1=>n
+
+        [JsonIgnore]
+        private Abonne abonne;
+        public Abonne Abonne
+        {
+            get
+            {
+                if (this.abonne == null)
+                {
+                    abonne = Abonne.jDA.GetById((int)idAbonne);
+                }
+                return abonne;
+            }
+            set
+            {
+                if (this.idAbonne != value?.Id)
+                {
+                    Abonne?.RemoveEmprunt(this);
+                    this.idAbonne = (int)(value?.Id);
+                    this.abonne = null; //need to reset Livre get
+                    Abonne?.AddEmprunt(this);
+                }
+            }
+
+        }
+
+        // Deuxième partie de la relation
+        /*[JsonIgnore]
+        private List<Emprunt> empruntList;
+        public List<Emprunt> EmpruntList
+        {
+            get
+            {
+                if (this.empruntList == null)
+                {
+                    this.empruntList = Emprunt.jDA.GetAll(item => item.IdAbonne == this.Id);
+                }
+                return this.empruntList;
+            }
+        }
+        public List<Emprunt> AddEmprunt(Emprunt emprunt)
+        {
+            if (this.EmpruntList.Find(item => item.Id == emprunt.Id) == null)
+            {
+                this.EmpruntList.Add(emprunt);
+                if (emprunt.Abonne.Id != this.Id)
+                {
+                    emprunt.Abonne = this;
+                }
+            }
+            return this.EmpruntList;
+        }
+
+        public List<Emprunt> RemoveEmprunt(Emprunt emprunt)
+        {
+            int index = this.EmpruntList.FindIndex(item => item.Id == emprunt.Id);
+            if (index >= 0)
+            {
+                this.EmpruntList.RemoveAt(index);
+                if (emprunt.Abonne.Id == this.Id)
+                {
+                    emprunt.Abonne = null;
+                }
+            }
+            return this.EmpruntList;
+        }*/
+
 
     }
 }

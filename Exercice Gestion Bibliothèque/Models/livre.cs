@@ -35,6 +35,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
         }
 
+        // relation exemplaire n=>1
+
         [JsonIgnore]
         private List<Exemplaire> exemplairesList;
         public List<Exemplaire> ExemplairesList
@@ -75,6 +77,11 @@ namespace Exercice_Gestion_Bibliothèque.Models
             return this.ExemplairesList;
         }
 
+        // relation Reservation n=>1
+
+
+
+        // relation Auteur n=>n
 
         [JsonIgnore]
         private List<int>? idAuteurList;
@@ -134,6 +141,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
             return this.AuteurList;
         }
+
+        // relation Theme n=>n
 
         [JsonIgnore]
         private List<int>? idThemeList;
