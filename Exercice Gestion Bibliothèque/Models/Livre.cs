@@ -79,7 +79,46 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         // relation Reservation n=>1
 
+        [JsonIgnore]
+        private List<Reservation> reservationList;
+        public List<Reservation> ReservationList
+        {
+            get
+            {
+                if (this.reservationList == null)
+                {
+                    this.reservationList = Reservation.jDA.GetAll(item => item.IdLivre == this.Id);
+                }
+                return this.reservationList;
+            }
+        }
 
+        public List<Reservation> AddReservation(Reservation reservation)
+        {
+            if (this.ReservationList.Find(item => item.Id == reservation.Id) == null)
+            {
+                this.ReservationList.Add(reservation);
+                if (reservation.IdLivre != this.Id)
+                {
+                    reservation.Livre = this;
+                }
+            }
+            return this.ReservationList;
+        }
+
+        public List<Reservation> RemoveReservation(Reservation reservation)
+        {
+            int index = this.ReservationList.FindIndex(item => item.Id == reservation.Id);
+            if (index >= 0)
+            {
+                this.ReservationList.RemoveAt(index);
+                if (reservation.Editeur.Id == this.Id)
+                {
+                    reservation.Editeur = null;
+                }
+            }
+            return this.ReservationList;
+        }
 
         // relation Auteur n=>n
 
@@ -203,14 +242,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             return this.ThemeList;
         }
 
-
-
-
-
-
-
-
-
+         // relation mot clé
         [JsonIgnore]
         private List<int>? idMotcleList;
         public List<int> IdMotcleList
