@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Editeur
+    internal class Editeur : ModelBase<Editeur>
     {
-        private string nom;
-
-        public string Nom { get => nom; set => nom = value; }
-        public Editeur()
+        private string? nom;
+        public string Nom
         {
-            nom = "";
-
-        }
-        public Editeur(string _nom)
-        {
-            this.Nom = _nom;
-        }
-        public string ToString() 
-        { 
-            return "Nom d'éditeur : " + nom;
+            get { return nom; }
+            set
+            {
+                if (this.nom != value)
+                {
+                    this.nom = value;
+                }
+            }
         }
     }
 }
