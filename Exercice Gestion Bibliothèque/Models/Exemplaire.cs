@@ -97,6 +97,35 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
         }
 
+
+
+        public List<Emprunt> AddEmprunt(Emprunt emprunt)
+        {
+            if (this.EmpruntList.Find(item => item.Id == emprunt.Id) == null)
+            {
+                this.EmpruntList.Add(emprunt);
+                if (emprunt.IdLivre != this.Id)
+                {
+                    emprunt.Livre = this;
+                }
+            }
+            return this.EmpruntList;
+        }
+
+        public List<Emprunt> RemoveEmprunt(Emprunt emprunt)
+        {
+            int index = this.EmpruntList.FindIndex(item => item.Id == emprunt.Id);
+            if (index >= 0)
+            {
+                this.EmpruntList.RemoveAt(index);
+                if (emprunt.Emprunt.Id == this.Id)
+                {
+                    emprunt.Livre = null;
+                }
+            }
+            return this.EmpruntList;
+        }
+
     }
 
 }
