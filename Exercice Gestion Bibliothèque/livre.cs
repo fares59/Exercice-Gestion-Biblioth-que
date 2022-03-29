@@ -10,11 +10,9 @@ namespace Exercice_Gestion_Bibliothèque
     {
         private string titre = "";
         private int ISBC = 0;
-        private List<Mots_cle> mots_cle = new();
 
         public string Titre { get => titre; set => titre = value; }
         public int ISBC1 { get => ISBC; set => ISBC = value; }
-        internal List<Mots_cle> Mots_cle { get => mots_cle; set => mots_cle = value; }
 
         public Livre()
         {
@@ -26,6 +24,13 @@ namespace Exercice_Gestion_Bibliothèque
             this.titre = titre;
             this.ISBC = iSBC;
         }
+
+        public override string ToString()
+        {
+            string ToString = "titre" + titre + "ISBC" + ISBC;
+
+            return ToString;
+        } 
     }
 
 
