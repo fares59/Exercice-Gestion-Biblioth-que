@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Exercice_Gestion_Bibliothèque
 {
-    internal class Livre
+    public class Livre
     {
         private string titre = "";
-        private int ISBC = 0;
+        private int isbc = 0;
+        private bool deleted = false;
 
-        public string Titre { get => titre; set => titre = value; }
-        public int ISBC1 { get => ISBC; set => ISBC = value; }
+        public string Titre1 { get => titre; set => titre = value; }
+        public int Isbc { get => isbc; set => isbc = value; }
+        public bool Deleted { get => deleted; set => deleted = value; }
 
         public Livre()
         {
@@ -21,14 +23,14 @@ namespace Exercice_Gestion_Bibliothèque
 
         public Livre(string titre, int iSBC)
         {
-            this.titre = titre;
-            this.ISBC = iSBC;
+            Titre1 = titre;
+            Isbc = iSBC;
 
         }
 
         public override string ToString()
         {
-            string ToString = "titre" + titre + "ISBC" + ISBC;
+            string ToString = "le titre du livre " + Titre1 + "l'isbc correspondant " + Isbc;
 
             return ToString;
         } 
