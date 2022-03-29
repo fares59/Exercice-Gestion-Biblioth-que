@@ -61,11 +61,33 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
         }
 
+        public List<Editeur> AddEditeur(Editeur editeur)
+        {
+            if (this.EditeurList.Find(item => item.Id == editeur.Id) == null)
+            {
+                this.IdEditeurList.Add(editeur.Id);
+                this.EditeurList.Add(editeur);
+                editeur.AddReservation(this);
+                //TODO persist
+            }
+            return this.AuteurList;
+        }
+
+        public List<Auteur> RemoveEditeur(Auteur auteur)
+        {
+            int index = this.EditeurList.FindIndex(item => item.Id == auteur.Id);
+            if (index >= 0)
+            {
+                this.IdEditeurList.Remove(auteur.Id);
+                this.EditeurList.RemoveAt(index);
+                auteur.RemoveLivre(this);
+                //TODO persist
+            }
+            return this.AuteurList;
 
 
 
 
 
-
-    }
+        }
 }

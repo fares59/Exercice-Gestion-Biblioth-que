@@ -60,5 +60,31 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
         }
 
+
+        [JsonIgnore]
+        private Exemplaire exemplaire;
+        public Exemplaire Exemplaire
+        {
+            get
+            {
+                if (this.exemplaire == null)
+                {
+                    exemplaire = Exemplaire.jDA.GetById(this.idexemplaire);
+                }
+                return exemplaire;
+            }
+            set
+            {
+                if (this.idexemplaire != value?.Id)
+                {
+                    Exemplaire?.RemoveEmprunt(this);
+                    this.idexemplaire = (int)(value?.Id);
+                    this.exemplaire = null; //need to reset Livre get
+                    Exemplaire?.AddEmprunt(this);
+                }
+            }
+
+        }
+
     }
 }
