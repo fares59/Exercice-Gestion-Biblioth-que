@@ -16,7 +16,7 @@ namespace Exercice_Gestion_Bibliothèque
         private bool deleted;
         private string date_adhesion;
         //private DateTime date_adhesion;
-        private Category? category;
+        //private Category? category;
 
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value;}
@@ -25,19 +25,19 @@ namespace Exercice_Gestion_Bibliothèque
         public string Email { get => email; set => email = value;}
         public bool Deleted { get => deleted; set => deleted = value; }
         public DateTime Date_adhesion { get => DateTime.Parse(date_adhesion); set => date_adhesion = value.ToString("yyyy-MM-dd");}
-        internal Category? Category
-        {
-            get => category;
-            set
-            {
-                if (category != value)
-                {
-                    category?.RemoveAbonne(this); //supprimer l'article de cetteCategory
-                    category = value;
-                    category?.AddAbonne(this); // ajouter l'article à ctte category
-                }
-            }
-        }
+        //internal Category? Category
+        //{
+        //    get => category;
+        //    set
+        //    {
+        //        if (category != value)
+        //        {
+        //            category?.RemoveAbonne(this); //supprimer l'article de cetteCategory
+        //            category = value;
+        //            category?.AddAbonne(this); // ajouter l'article à ctte category
+        //        }
+        //    }
+        //}
         public Abonne()
         {
             nom = "";
