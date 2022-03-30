@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateAchatInput = new System.Windows.Forms.RichTextBox();
+            this.editionInput = new System.Windows.Forms.RichTextBox();
+            this.auteurInput = new System.Windows.Forms.RichTextBox();
+            this.themeInput = new System.Windows.Forms.RichTextBox();
+            this.titreInput = new System.Windows.Forms.RichTextBox();
+            this.isbnInput = new System.Windows.Forms.RichTextBox();
+            this.etagereRoll = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rayonRoll = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,61 +52,62 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
-            // richTextBox6
+            // dateAchatInput
             // 
-            this.richTextBox6.Location = new System.Drawing.Point(177, 272);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox6.TabIndex = 39;
-            this.richTextBox6.Text = "";
+            this.dateAchatInput.Location = new System.Drawing.Point(177, 272);
+            this.dateAchatInput.Name = "dateAchatInput";
+            this.dateAchatInput.Size = new System.Drawing.Size(319, 23);
+            this.dateAchatInput.TabIndex = 39;
+            this.dateAchatInput.Text = "";
             // 
-            // richTextBox5
+            // editionInput
             // 
-            this.richTextBox5.Location = new System.Drawing.Point(178, 205);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox5.TabIndex = 38;
-            this.richTextBox5.Text = "";
+            this.editionInput.Location = new System.Drawing.Point(178, 205);
+            this.editionInput.Name = "editionInput";
+            this.editionInput.Size = new System.Drawing.Size(319, 23);
+            this.editionInput.TabIndex = 38;
+            this.editionInput.Text = "";
             // 
-            // richTextBox4
+            // auteurInput
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(178, 173);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox4.TabIndex = 37;
-            this.richTextBox4.Text = "";
+            this.auteurInput.Location = new System.Drawing.Point(178, 173);
+            this.auteurInput.Name = "auteurInput";
+            this.auteurInput.Size = new System.Drawing.Size(319, 23);
+            this.auteurInput.TabIndex = 37;
+            this.auteurInput.Text = "";
             // 
-            // richTextBox3
+            // themeInput
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(178, 139);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox3.TabIndex = 36;
-            this.richTextBox3.Text = "";
+            this.themeInput.Location = new System.Drawing.Point(178, 139);
+            this.themeInput.Name = "themeInput";
+            this.themeInput.Size = new System.Drawing.Size(319, 23);
+            this.themeInput.TabIndex = 36;
+            this.themeInput.Text = "";
             // 
-            // richTextBox1
+            // titreInput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(178, 75);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox1.TabIndex = 35;
-            this.richTextBox1.Text = "";
+            this.titreInput.Location = new System.Drawing.Point(178, 75);
+            this.titreInput.Name = "titreInput";
+            this.titreInput.Size = new System.Drawing.Size(319, 23);
+            this.titreInput.TabIndex = 35;
+            this.titreInput.Text = "";
+            this.titreInput.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // richTextBox2
+            // isbnInput
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(178, 107);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(319, 23);
-            this.richTextBox2.TabIndex = 34;
-            this.richTextBox2.Text = "";
+            this.isbnInput.Location = new System.Drawing.Point(178, 107);
+            this.isbnInput.Name = "isbnInput";
+            this.isbnInput.Size = new System.Drawing.Size(319, 23);
+            this.isbnInput.TabIndex = 34;
+            this.isbnInput.Text = "";
             // 
-            // comboBox2
+            // etagereRoll
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(376, 239);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 33;
+            this.etagereRoll.FormattingEnabled = true;
+            this.etagereRoll.Location = new System.Drawing.Point(376, 239);
+            this.etagereRoll.Name = "etagereRoll";
+            this.etagereRoll.Size = new System.Drawing.Size(121, 23);
+            this.etagereRoll.TabIndex = 33;
             // 
             // label10
             // 
@@ -126,13 +127,13 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Etagère";
             // 
-            // comboBox1
+            // rayonRoll
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 239);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 30;
+            this.rayonRoll.FormattingEnabled = true;
+            this.rayonRoll.Location = new System.Drawing.Point(177, 239);
+            this.rayonRoll.Name = "rayonRoll";
+            this.rayonRoll.Size = new System.Drawing.Size(121, 23);
+            this.rayonRoll.TabIndex = 30;
             // 
             // label8
             // 
@@ -151,6 +152,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -215,20 +217,20 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Date_Achat";
             // 
-            // UserControl1
+            // AjoutLivreUserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.richTextBox6);
-            this.Controls.Add(this.richTextBox5);
-            this.Controls.Add(this.richTextBox4);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.dateAchatInput);
+            this.Controls.Add(this.editionInput);
+            this.Controls.Add(this.auteurInput);
+            this.Controls.Add(this.themeInput);
+            this.Controls.Add(this.titreInput);
+            this.Controls.Add(this.isbnInput);
+            this.Controls.Add(this.etagereRoll);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.rayonRoll);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -238,7 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
-            this.Name = "UserControl1";
+            this.Name = "AjoutLivreUserControl1";
             this.Size = new System.Drawing.Size(567, 374);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,16 +249,16 @@
 
         #endregion
 
-        private RichTextBox richTextBox6;
-        private RichTextBox richTextBox5;
-        private RichTextBox richTextBox4;
-        private RichTextBox richTextBox3;
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox2;
-        private ComboBox comboBox2;
+        private RichTextBox dateAchatInput;
+        private RichTextBox editionInput;
+        private RichTextBox auteurInput;
+        private RichTextBox themeInput;
+        private RichTextBox titreInput;
+        private RichTextBox isbnInput;
+        private ComboBox etagereRoll;
         private Label label10;
         private Label label9;
-        private ComboBox comboBox1;
+        private ComboBox rayonRoll;
         private Label label8;
         private Button button1;
         private Label label6;
@@ -269,5 +271,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label7;
         private FontDialog fontDialog1;
+
+
     }
 }
