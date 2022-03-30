@@ -90,30 +90,30 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         // relation editeur 1=>n
-            [JsonIgnore]
-            private Editeur? editeur;
-            public Editeur Editeur
+        [JsonIgnore]
+        private Editeur? editeur;
+        public Editeur Editeur
 
+        {
+            get
             {
-                get
+                if (this.editeur == null)
                 {
-                    if (this.editeur == null)
-                    {
                     editeur = Editeur.jDA.GetById((int)idEditeur);
-                    }
-                    return editeur;
                 }
-                set
+                return editeur;
+            }
+            set
+            {
+                if (this.idEditeur != value?.Id)
                 {
-                    if (this.idEditeur != value?.Id)
-                    {
                     Editeur?.RemoveReservation(this);
                     this.idEditeur = (int)(value?.Id);
                     this.editeur = null; //need to reset Livre get
                     Editeur?.AddReservation(this);
-                    }
                 }
             }
+        }
 
         // relation abonne 1=>n
 
@@ -140,71 +140,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 }
             }
         }
-
-
-        /*// relation Reservation n=>1 pour abonne
-
-        [JsonIgnore]
-        private List<Reservation> reservationList;
-        public List<Reservation> ReservationList
-        {
-            get
-            {
-                if (this.reservationList == null)
-                {
-                    this.reservationList = Reservation.jDA.GetAll(item => item.IdAbonne == this.Id);
-                }
-                return this.reservationList;
-            }
-        }
-
-        public List<Reservation> AddReservation(Reservation reservation)
-        {
-            if (this.ReservationList.Find(item => item.Id == reservation.Id) == null)
-            {
-                this.ReservationList.Add(reservation);
-                if (reservation.IdAbonne != this.Id)
-                {
-                    reservation.Abonne = this;
-                }
-            }
-            return this.ReservationList;
-        }
-
-        public List<Reservation> RemoveReservation(Reservation reservation)
-        {
-            int index = this.ReservationList.FindIndex(item => item.Id == reservation.Id);
-            if (index >= 0)
-            {
-                this.ReservationList.RemoveAt(index);
-                if (reservation.Abonne.Id == this.Id)
-                {
-                    reservation.Abonne = null;
-                }
-            }
-            return this.ReservationList;
-        }
-
-            {
-                get
-                {
-                    if (this.editeur == null)
-                    {
-            editeur = Editeur.jDA.GetById((int)idEditeur);
-        }
-                    return editeur;
-        }
-        set
-                {
-                    if (this.idEditeur ! = value?.Id)
-                    {
-            Editeur?.RemoveReservation(this);
-            this.idEditeur = (int)(value?.Id);
-            this.editeur = null; //need to reset Livre get
-            Editeur?.AddReservation(this);
-        }
-        }
     }
+}
 
 
-      /*
+       

@@ -3,29 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Category
+    internal class Categorie : ModelBase<Categorie>
     {
         private string titre;
-        //private List<Abonne> abonnes = new();
-
-        public string Titre { get => titre; set => titre = value; }
-
-        //public List<Abonne> Abonnes { get => abonnes;}
-
-        public Category()
+        public string Titre
         {
-            this.Titre = "";
+            get { return titre; }
+            set
+            {
+                if (this.titre != value)
+                {
+                    this.titre = value;
+                }
+            }
         }
-        public Category(string _titre)
+
+        [JsonIgnore]
+        private List<Abonne> abonnesList;
+        public List<Abonne> AbonnesList
         {
-            this.Titre = _titre;
+            get
+            {
+                if (this.abonnesList == null)
+                {
+                    this.abonnesList = Abonne.jDA.GetAll(item => item.IdCategorie == this.Id);
+                }
+                return this.abonnesList;
+            }
         }
-        public string ToString()
+        public List<Abonne> AddAbonne(Abonne Abonne)
         {
-            return "categorie professionnelle : " + titre;
+            if (this.abonnesList.Find(item => item.Id == Abonne.Id) == null)
+            {
+                this.abonnesList.Add(Abonne);
+                if (Abonne.Categorie.Id != this.Id)
+                {
+                    Abonne.Categorie = this;
+                }
+            }
+            return this.abonnesList;
+        }
+
+        public List<Abonne> RemoveAbonne(Abonne Abonne)
+        {
+            int index = this.abonnesList.FindIndex(item => item.Id == Abonne.Id);
+            if (index >= 0)
+            {
+                this.abonnesList.RemoveAt(index);
+                if (Abonne.Categorie.Id == this.Id)
+                {
+                    Abonne.Categorie = null;
+                }
+            }
+            return this.abonnesList;
         }
         //public void AddAbonne(Abonne abonne)
         //{
