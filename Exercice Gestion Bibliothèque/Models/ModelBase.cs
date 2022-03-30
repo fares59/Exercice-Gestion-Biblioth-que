@@ -23,6 +23,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.id != value)
                 {
                     this.id = value;
+                    RaisePropertyChanged(() => Id);
                 }
             }
         }
@@ -43,20 +44,20 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         //DAL
-        public static readonly DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>();
+        public static readonly DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>(); // Data Access Layer permet de faire la jonction entre les composants de l'interface et les données
 
         #region INotifyPropertyChanged Implementation
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void RaisePropertyChanged<M>(Expression<Func<M>> action) //where M : ModelBase<M>
+        public event PropertyChangedEventHandler? PropertyChanged; // définition de l'objet
+        public void RaisePropertyChanged<M>(Expression<Func<M>> action) //where M : ModelBase<M> M correspond à une convention qui fait référence au models
         {
-            MemberExpression expression = (MemberExpression)action.Body;
+            MemberExpression expression = (MemberExpression)action.Body; // correspond à la rcupération de l'expression
             string propertyName = expression.Member.Name;
-            if (PropertyChanged != null)
+            if (PropertyChanged != null) // si il exister un composant la condition se déclenche 
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // le changement de propriété 
             }
-            jDA.Persist((T)this);
+            jDA.Persist((T)this); //permet de save à chaque action donc chaque changement d'état
         }
 
         #endregion

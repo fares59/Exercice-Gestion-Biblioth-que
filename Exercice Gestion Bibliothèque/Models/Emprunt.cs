@@ -6,6 +6,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     {
         [JsonProperty(PropertyName = "date_emprunt")]
         private string? dateEmprunt;
+        [JsonIgnore]
         public DateTime DateEmprunt
         {
             get => DateTime.Parse(dateEmprunt);
@@ -14,6 +15,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateEmprunt != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateEmprunt = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateEmprunt);
                 }
             }
 
@@ -21,6 +23,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonProperty(PropertyName = "date_sortie")]
         private string? dateSortie;
+        [JsonIgnore]
         public DateTime DateSortie
         {
             get => DateTime.Parse(dateSortie);
@@ -29,12 +32,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateSortie != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateSortie = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateSortie);
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_exemplaire")]
         private int? idExemplaire;
+        [JsonIgnore]
         public int? IdExemplaire
         {
             get { return idExemplaire; }
@@ -43,12 +48,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idExemplaire != value)
                 {
                     this.idExemplaire = value;
+                    RaisePropertyChanged(() => IdExemplaire);
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_abonne")]
         private int? idAbonne;
+        [JsonIgnore]
         public int? IdAbonne
         {
             get { return idAbonne; }
@@ -57,6 +64,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idAbonne != value)
                 {
                     this.idAbonne = value;
+                    RaisePropertyChanged(() => IdAbonne);
                 }
             }
         }

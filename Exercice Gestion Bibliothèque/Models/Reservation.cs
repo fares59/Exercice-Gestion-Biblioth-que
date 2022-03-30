@@ -6,6 +6,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     {
         [JsonProperty(PropertyName = "date_reservation")]
         private string? dateReservation;
+        [JsonIgnore]
         public DateTime DateReservation
         {
             get => DateTime.Parse(dateReservation);
@@ -14,14 +15,19 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateReservation != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateReservation = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateReservation);
+
+
+
                 }
             }
         }
 
 
         [JsonProperty(PropertyName = "id_editeur")]
-        private int idEditeur;
-        public int IdEditeur
+        private int? idEditeur;
+        [JsonIgnore]
+        public int? IdEditeur
         {
             get { return idEditeur; }
             set
@@ -29,12 +35,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idEditeur != value)
                 {
                     this.idEditeur = value;
+                    RaisePropertyChanged(() => IdEditeur);
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_livre")]
         private int? idLivre;
+        [JsonIgnore]
         public int? IdLivre
         {
             get { return idLivre; }
@@ -43,6 +51,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idLivre != value)
                 {
                     this.idLivre = value;
+                    RaisePropertyChanged(() => IdLivre);
                     //TODO persist ?
                 }
             }
@@ -50,6 +59,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonProperty(PropertyName = "id_abonne")]
         private int? idAbonne;
+        [JsonIgnore]
         public int? IdAbonne
         {
             get { return idAbonne; }
@@ -58,6 +68,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idAbonne != value)
                 {
                     this.idAbonne = value;
+                    RaisePropertyChanged(() => IdAbonne);
                 }
             }
         }
