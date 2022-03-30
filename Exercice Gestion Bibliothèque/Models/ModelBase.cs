@@ -44,7 +44,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         //DAL
-        public static readonly DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>(); // Data Access Layer
+        public static readonly DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>(); // Data Access Layer permet de faire la jonction entre les composants de l'interface et les données
 
         #region INotifyPropertyChanged Implementation
 
@@ -57,7 +57,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // le changement de propriété 
             }
-            jDA.Persist((T)this); // de save à chaque action donc chaque changement d'état
+            jDA.Persist((T)this); //permet de save à chaque action donc chaque changement d'état
         }
 
         #endregion
