@@ -6,7 +6,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     {
         [JsonProperty(PropertyName = "date_emprunt")]
         private string? dateEmprunt;
-        public DateTime DatEmprunt
+        public DateTime DateEmprunt
         {
             get => DateTime.Parse(dateEmprunt);
             set
