@@ -1,34 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-   public class Emprunt // Protected pour sécuriser l'accès à la classe 
-   {
-            // Initialisation des variables
-            private string date_emprunt;
-            private string date_sortie;
-
-        public DateTime Date_emprunt { get => DateTime.Parse(date_emprunt); set => date_emprunt = value.ToString("yyyy-MM-dd"); }
-        public DateTime Date_sortie { get => DateTime.Parse(date_sortie); set => date_sortie = value.ToString("yyyy-MM-dd"); }
-
-        public  Emprunt(string emprunt, string sortie)
-            {
-                date_emprunt = emprunt;
-                date_sortie = sortie;    
-            }
-
-        public Emprunt() { }
-        public override string ToString()
+    internal class Emprunt : ModelBase<Emprunt>
+    {
+        [JsonProperty(PropertyName = "date_emprunt")]
+        private string? date_emprunt;
+        public DateTime Date_emprunt
         {
-            string toString = "Le livre a été emprunté le " + date_sortie +
-                "il a été retourné le " + date_emprunt
-                ;
-
-            return toString;
+            get => DateTime.Parse(date_emprunt);
+            set
+            {
+                if (this.date_emprunt != value.ToString("yyyy-MM-dd"))
+                {
+                    this.date_emprunt = value.ToString("yyyy-MM-dd");
+                }
+            }
         }
-   }
+
+        [JsonProperty(PropertyName = "date_sortie")]
+        private string? date_sortie;
+        public DateTime Date_sortie
+        {
+            get => DateTime.Parse(date_sortie);
+            set
+            {
+                if (this.date_sortie != value.ToString("yyyy-MM-dd"))
+                {
+                    this.date_sortie = value.ToString("yyyy-MM-dd");
+                }
+            }
+        }
+
+        [JsonProperty(PropertyName = "id_exemplaire")]
+        private int id_exemplaire;
+        public int idexemplaire
+        {
+            get { return idexemplaire; }
+            set
+            {
+                if (this.idexemplaire != value)
+                {
+                    this.idexemplaire = value;
+                }
+            }
+        }
+
+        [JsonProperty(PropertyName = "id_abonne")]
+        private int id_abonne;
+        public int idabonne
+        {
+            get { return idabonne; }
+            set
+            {
+                if (this.idabonne != value)
+                {
+                    this.idabonne = value;
+                }
+            }
+        }
+
+    }
 }

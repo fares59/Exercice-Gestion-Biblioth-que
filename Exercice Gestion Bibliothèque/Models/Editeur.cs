@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class Editeur
+    internal class Editeur : ModelBase<Editeur>
     {
         private string nom;
         public string Nom {
@@ -21,16 +21,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
         public Editeur()
         {
-            nom = "";
-
         }
-        public Editeur(string _nom)
-        {
-            this.Nom = _nom;
-        }
-        public string ToString() 
-        { 
-            return "Nom d'éditeur : " + nom;
-        }
+        
     }
 }
