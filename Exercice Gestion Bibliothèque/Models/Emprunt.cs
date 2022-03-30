@@ -16,6 +16,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                     this.dateEmprunt = value.ToString("yyyy-MM-dd");
                 }
             }
+
         }
 
         [JsonProperty(PropertyName = "date_sortie")]
