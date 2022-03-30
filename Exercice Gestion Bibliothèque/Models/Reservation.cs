@@ -90,30 +90,30 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         // relation editeur 1=>n
-            [JsonIgnore]
-            private Editeur? editeur;
-            public Editeur Editeur
+        [JsonIgnore]
+        private Editeur? editeur;
+        public Editeur Editeur
 
+        {
+            get
             {
-                get
+                if (this.editeur == null)
                 {
-                    if (this.editeur == null)
-                    {
                     editeur = Editeur.jDA.GetById((int)idEditeur);
-                    }
-                    return editeur;
                 }
-                set
+                return editeur;
+            }
+            set
+            {
+                if (this.idEditeur != value?.Id)
                 {
-                    if (this.idEditeur != value?.Id)
-                    {
                     Editeur?.RemoveReservation(this);
                     this.idEditeur = (int)(value?.Id);
                     this.editeur = null; //need to reset Livre get
                     Editeur?.AddReservation(this);
-                    }
                 }
             }
+        }
 
         // relation abonne 1=>n
 
@@ -140,6 +140,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 }
             }
         }
+    }
+}
 
 
         /*// relation Reservation n=>1 pour abonne
