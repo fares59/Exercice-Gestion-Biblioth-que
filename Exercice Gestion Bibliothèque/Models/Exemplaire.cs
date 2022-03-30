@@ -14,6 +14,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateAchat != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateAchat = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateAchat);
                 }
             }
         }

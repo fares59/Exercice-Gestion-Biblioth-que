@@ -13,6 +13,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.etat != value)
                 {
                     this.etat = value;
+                    RaisePropertyChanged(() => Etat);
                 }
             }
         }
