@@ -9,7 +9,10 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Livre : ModelBase<Livre>
     {
+        [JsonProperty(PropertyName = "titre")]
         private string titre;
+
+        [JsonIgnore]
         public string Titre
         {
             get { return titre; }
@@ -18,11 +21,13 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.titre != value)
                 {
                     this.titre = value;
+                    RaisePropertyChanged(() => Titre);
                 }
             }
         }
-
+        [JsonProperty(PropertyName = "isbn")]
         private string isbn;
+        [JsonIgnore]
         public string Isbn
         {
             get { return isbn; }
@@ -31,6 +36,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.isbn != value)
                 {
                     this.isbn = value;
+                    RaisePropertyChanged(() => Isbn);
                 }
             }
         }
@@ -39,6 +45,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Exemplaire> exemplairesList;
+
+        [JsonIgnore]
         public List<Exemplaire> ExemplairesList
         {
             get
@@ -81,6 +89,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Reservation> reservationList;
+        [JsonIgnore]
         public List<Reservation> ReservationList
         {
             get
@@ -124,6 +133,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<int>? idAuteurList;
+        [JsonIgnore]
         public List<int> IdAuteurList
         {
             get
@@ -144,6 +154,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Auteur>? auteurList;
+        [JsonIgnore]
         public List<Auteur> AuteurList
         {
             get
@@ -185,6 +196,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<int>? idThemeList;
+        [JsonIgnore]
         public List<int> IdThemeList
         {
             get
@@ -205,6 +217,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Theme>? themeList;
+        [JsonIgnore]
         public List<Theme> ThemeList
         {
             get
@@ -245,6 +258,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
          // relation mot clé
         [JsonIgnore]
         private List<int>? idMotcleList;
+        [JsonIgnore]
         public List<int> IdMotcleList
         {
             get
@@ -265,6 +279,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Mot_cle>? motcleList;
+        [JsonIgnore]
         public List<Mot_cle> MotcleList
         {
             get

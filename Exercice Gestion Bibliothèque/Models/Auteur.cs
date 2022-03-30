@@ -5,7 +5,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Auteur : ModelBase<Auteur>
     {
+        [JsonProperty(PropertyName = "nom")]
         private string nom;
+        [JsonIgnore]
         public string Nom
         {
             get { return nom; }
@@ -14,11 +16,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.nom != value)
                 {
                     this.nom = value;
+                    RaisePropertyChanged(() => Nom);
                 }
             }
         }
 
+        [JsonProperty(PropertyName = "prenom")]
         private string prenom;
+        [JsonIgnore]
         public string Prenom
         {
             get { return prenom; }
@@ -27,12 +32,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.prenom != value)
                 {
                     this.prenom = value;
+                    RaisePropertyChanged(() => Prenom);
                 }
             }
         }
 
         [JsonIgnore]
         private List<int> idLivreList;
+        [JsonIgnore]
         public List<int> IdLivreList
         {
             get
@@ -53,6 +60,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Livre> livreList;
+        [JsonIgnore]
         public List<Livre> LivreList
         {
             get
