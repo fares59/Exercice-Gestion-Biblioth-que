@@ -6,6 +6,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     {
         [JsonProperty(PropertyName = "date_achat")]
         private string dateAchat;
+        [JsonIgnore]
         public DateTime DateAchat
         {
             get => DateTime.Parse(dateAchat);
@@ -14,11 +15,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateAchat != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateAchat = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateAchat);
                 }
             }
         }
 
+        [JsonProperty(PropertyName = "emplacement")]
         private string emplacement;
+        [JsonIgnore]
         public string Emplacement
         {
             get { return emplacement; }
@@ -27,12 +31,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.emplacement != value)
                 {
                     this.emplacement = value;
+                    RaisePropertyChanged(() => Emplacement);
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_livre")]
         private int idLivre;
+        [JsonIgnore]
         public int IdLivre
         {
             get { return idLivre; }
@@ -41,6 +47,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idLivre != value)
                 {
                     this.idLivre = value;
+                    RaisePropertyChanged(() => IdLivre);
                 }
             }
         }
@@ -48,6 +55,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonProperty(PropertyName = "id_usure")]
         private int idUsure;
+        [JsonIgnore]
         public int IdUsure
         {
             get { return idUsure; }
@@ -56,12 +64,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idUsure != value)
                 {
                     this.idUsure = value;
+                    RaisePropertyChanged(() => IdUsure);
                 }
             }
         }
 
         [JsonProperty(PropertyName = "id_editeur")]
         private int idEditeur;
+        [JsonIgnore]
         public int IdEditeur
         {
             get { return idEditeur; }
@@ -70,6 +80,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.idEditeur != value)
                 {
                     this.idEditeur = value;
+                    RaisePropertyChanged(() => IdEditeur);
+
                 }
             }
         }

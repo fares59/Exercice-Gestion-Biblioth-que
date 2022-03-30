@@ -4,6 +4,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Usure : ModelBase<Usure>
     {
+        [JsonProperty(PropertyName = "etat")]
         private string etat;
         public string Etat
         {
@@ -13,6 +14,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.etat != value)
                 {
                     this.etat = value;
+                    RaisePropertyChanged(() => Etat);
                 }
             }
         }

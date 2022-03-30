@@ -16,7 +16,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.mot != value)
                 {
                     this.mot = value;
-                    RaisePropertyChanged(() => mot);
+                    RaisePropertyChanged(() => Mot);
                 }
             }
         }

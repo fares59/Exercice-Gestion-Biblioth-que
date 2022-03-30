@@ -16,9 +16,6 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 {
                     this.dateReservation = value.ToString("yyyy-MM-dd");
                     RaisePropertyChanged(() => DateReservation);
-
-
-
                 }
             }
         }
