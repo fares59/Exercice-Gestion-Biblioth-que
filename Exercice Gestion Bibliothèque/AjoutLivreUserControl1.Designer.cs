@@ -30,7 +30,7 @@
         {
             this.dateAchatInput = new System.Windows.Forms.RichTextBox();
             this.editionInput = new System.Windows.Forms.RichTextBox();
-            this.auteurInput = new System.Windows.Forms.RichTextBox();
+            this.prenomInput = new System.Windows.Forms.RichTextBox();
             this.themeInput = new System.Windows.Forms.RichTextBox();
             this.titreInput = new System.Windows.Forms.RichTextBox();
             this.isbnInput = new System.Windows.Forms.RichTextBox();
@@ -50,6 +50,10 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label7 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.nomInput = new System.Windows.Forms.RichTextBox();
+            this.Nom = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // dateAchatInput
@@ -68,13 +72,13 @@
             this.editionInput.TabIndex = 38;
             this.editionInput.Text = "";
             // 
-            // auteurInput
+            // prenomInput
             // 
-            this.auteurInput.Location = new System.Drawing.Point(178, 173);
-            this.auteurInput.Name = "auteurInput";
-            this.auteurInput.Size = new System.Drawing.Size(319, 23);
-            this.auteurInput.TabIndex = 37;
-            this.auteurInput.Text = "";
+            this.prenomInput.Location = new System.Drawing.Point(352, 173);
+            this.prenomInput.Name = "prenomInput";
+            this.prenomInput.Size = new System.Drawing.Size(144, 23);
+            this.prenomInput.TabIndex = 37;
+            this.prenomInput.Text = "";
             // 
             // themeInput
             // 
@@ -217,13 +221,51 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Date_Achat";
             // 
+            // nomInput
+            // 
+            this.nomInput.Location = new System.Drawing.Point(178, 173);
+            this.nomInput.Name = "nomInput";
+            this.nomInput.Size = new System.Drawing.Size(120, 23);
+            this.nomInput.TabIndex = 40;
+            this.nomInput.Text = "";
+            // 
+            // Nom
+            // 
+            this.Nom.AutoSize = true;
+            this.Nom.Location = new System.Drawing.Point(131, 181);
+            this.Nom.Name = "Nom";
+            this.Nom.Size = new System.Drawing.Size(34, 15);
+            this.Nom.TabIndex = 41;
+            this.Nom.Text = "Nom";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(302, 177);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 15);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "prenom";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(185, 280);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 43;
+            // 
             // AjoutLivreUserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.Nom);
+            this.Controls.Add(this.nomInput);
             this.Controls.Add(this.dateAchatInput);
             this.Controls.Add(this.editionInput);
-            this.Controls.Add(this.auteurInput);
+            this.Controls.Add(this.prenomInput);
             this.Controls.Add(this.themeInput);
             this.Controls.Add(this.titreInput);
             this.Controls.Add(this.isbnInput);
@@ -251,7 +293,7 @@
 
         private RichTextBox dateAchatInput;
         private RichTextBox editionInput;
-        private RichTextBox auteurInput;
+        private RichTextBox prenomInput;
         private RichTextBox themeInput;
         private RichTextBox titreInput;
         private RichTextBox isbnInput;
@@ -271,7 +313,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label7;
         private FontDialog fontDialog1;
-
-
+        private RichTextBox nomInput;
+        private Label Nom;
+        private Label label11;
+        private DateTimePicker dateTimePicker1;
     }
 }

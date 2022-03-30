@@ -31,6 +31,17 @@ namespace Exercice_Gestion_Bibliothèque
 
         private void button1_Click(object sender, EventArgs e)
         {
+            livre.Titre = titreInput.Text;
+            livre.Isbn = isbnInput.Text;
+            theme.Titre = themeInput.Text;
+            auteur.Nom = nomInput.Text;
+            auteur.Prenom = prenomInput.Text;
+            editeur.Nom = editionInput.Text;
+            exemplaire.DateAchat = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
 
         }
     }
