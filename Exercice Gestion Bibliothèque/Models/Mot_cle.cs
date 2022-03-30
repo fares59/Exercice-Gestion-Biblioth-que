@@ -5,7 +5,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Mot_cle : ModelBase<Mot_cle>
     {
+        [JsonProperty(PropertyName = "mot")]
         private string mot;
+        [JsonIgnore]
         public string Mot
         {
             get { return mot; }
@@ -14,12 +16,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.mot != value)
                 {
                     this.mot = value;
+                    RaisePropertyChanged(() => mot);
                 }
             }
         }
 
         [JsonIgnore]
         private List<int>? idLivreList;
+        [JsonIgnore]
         public List<int> IdLivreList
         {
             get
@@ -40,6 +44,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Livre>? livreList;
+        [JsonIgnore]
         public List<Livre> LivreList
         {
             get

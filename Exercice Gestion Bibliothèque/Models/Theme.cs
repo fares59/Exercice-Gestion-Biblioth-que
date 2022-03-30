@@ -5,7 +5,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Theme : ModelBase<Theme>
     {
+        [JsonProperty(PropertyName = "titre")]
         private string titre;
+        [JsonIgnore]
         public string Titre
         {
             get { return titre; }
@@ -14,12 +16,14 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.titre != value)
                 {
                     this.titre = value;
+                    RaisePropertyChanged(() => titre);
                 }
             }
         }
 
         [JsonIgnore]
         private List<int>? idLivreList;
+        [JsonIgnore]
         public List<int> IdLivreList
         {
             get
@@ -40,6 +44,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         [JsonIgnore]
         private List<Livre>? livreList;
+        [JsonIgnore]
         public List<Livre> LivreList
         {
             get
