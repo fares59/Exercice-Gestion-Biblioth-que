@@ -5,6 +5,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     internal class Editeur : ModelBase<Editeur>
     {
         private string? nom;
+        [JsonIgnore]
         public string Nom
         {
             get { return nom; }
@@ -13,6 +14,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.nom != value)
                 {
                     this.nom = value;
+                    RaisePropertyChanged(() => Nom);
                 }
             }
         }
