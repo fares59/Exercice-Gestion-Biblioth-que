@@ -108,7 +108,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 if (this.categorie == null)
                 {
-                    categorie = Categorie.jDA.GetById(this.idCategorie);
+                    categorie = Categorie.jDA.GetById((int)idCategorie);
                 }
                 return categorie;
             }
