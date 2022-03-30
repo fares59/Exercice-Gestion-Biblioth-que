@@ -209,5 +209,28 @@ namespace Exercice_Gestion_Bibliothèque.Models
             return this.ReservationList;
         }
 
+
+        public Abonne()
+        {
+            nom = "";
+            prenom = "";
+            email = "";
+            telephone = "";
+            dateAdhesion = DateTime.Now.ToString("yyyy-MM-dd");
+
+        }
+        public Abonne(string _nom, string _prenom, string _telephone, string _email, DateTime _dateAdhesion)
+        {
+            this.nom = _nom;
+            this.prenom = _prenom;
+            this.telephone = _telephone;
+            this.email = _email;
+            this.dateAdhesion = _dateAdhesion.ToString("yyyy-MM-dd");
+        }
+
+        public string ToString()
+        {
+            return "Nom : " + nom + " prenom : " + prenom + " email : " + email;
+        }
     }
 }

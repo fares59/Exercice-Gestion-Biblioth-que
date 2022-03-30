@@ -61,6 +61,19 @@ namespace Exercice_Gestion_Bibliothèque.Models
             }
             return this.abonnesList;
         }
+
+        public Categorie()
+        {
+            this.Titre = "";
+        }
+        public Categorie(string _titre)
+        {
+            this.Titre = _titre;
+        }
+        public string ToString()
+        {
+            return "categorie professionnelle : " + titre;
+        }
         //public void AddAbonne(Abonne abonne)
         //{
         //    if (!abonnes.Contains(abonne))
