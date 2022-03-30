@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Linq.Expressions;
 
 namespace Exercice_Gestion_Bibliothèque.Models
 {
-    internal class ModelBase<T> where T : ModelBase<T>
+    internal class ModelBase<T> : INotifyPropertyChanged where T : ModelBase<T>
     {
-        private int id;
+
+        [JsonProperty(PropertyName = "id")]
+        protected int id;
+        [JsonIgnore]
         public int Id
         {
             get => id;
@@ -20,7 +26,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 }
             }
         }
-        private bool deleted = false;
+        [JsonProperty(PropertyName = "deleted")]
+        protected bool deleted = false;
+        [JsonIgnore]
         public bool Deleted
         {
             get => deleted;
@@ -29,13 +37,28 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.deleted != value)
                 {
                     this.deleted = value;
+                    RaisePropertyChanged(() => Deleted);
                 }
             }
         }
 
         //DAL
-        public static DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>();
+        public static readonly DAL.JsonDataAcces<T> jDA = new DAL.JsonDataAcces<T>();
 
+        #region INotifyPropertyChanged Implementation
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void RaisePropertyChanged<M>(Expression<Func<M>> action) //where M : ModelBase<M>
+        {
+            MemberExpression expression = (MemberExpression)action.Body;
+            string propertyName = expression.Member.Name;
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+            jDA.Persist((T)this);
+        }
+
+        #endregion
     }
 }
