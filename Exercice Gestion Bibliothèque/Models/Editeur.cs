@@ -8,9 +8,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class Editeur : ModelBase<Editeur>
     {
-        private string? nom;
-        public string Nom
-        {
+        private string nom;
+        public string Nom {
             get { return nom; }
             set
             {
@@ -20,5 +19,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 }
             }
         }
+        public Editeur()
+        {
+        }
+        
     }
 }
