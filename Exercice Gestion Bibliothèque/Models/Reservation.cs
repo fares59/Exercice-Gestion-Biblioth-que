@@ -25,9 +25,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
 
         [JsonProperty(PropertyName = "id_editeur")]
-        private int idEditeur;
+        private int? idEditeur;
         [JsonIgnore]
-        public int IdEditeur
+        public int? IdEditeur
         {
             get { return idEditeur; }
             set
