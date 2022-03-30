@@ -13,4 +13,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="if not exist $(ProjectDir)$(OutDir)JsonData mkdir $(ProjectDir)$(OutDir)JsonData" />
+		<Exec Command="copy $(ProjectDir)JsonData\* $(ProjectDir)$(OutDir)JsonData" />
+	</Target>
+
 </Project>
