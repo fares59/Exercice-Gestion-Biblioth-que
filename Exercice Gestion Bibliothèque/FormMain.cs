@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercice_Gestion_Bibliothèque.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,12 @@ namespace Exercice_Gestion_Bibliothèque
             panel1.Controls.Add(vueabonneUserControl);
         }
 
-
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Abonne abonne1 = new Abonne() { Id = 1, Nom = "Abonne1" };
+            Abonne abonne2 = new Abonne() { Id = 2, Nom = "Abonne2" };
+            Emprunt emprunt1 = new Emprunt() { Id = 1}; 
+            emprunt1.Abonne = abonne1;
+        }
     }
 }

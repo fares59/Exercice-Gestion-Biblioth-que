@@ -11,7 +11,6 @@ namespace Exercice_Gestion_Bibliothèque.Models
 {
     internal class ModelBase<T> : INotifyPropertyChanged where T : ModelBase<T>
     {
-
         [JsonProperty(PropertyName = "id")]
         protected int id;
         [JsonIgnore]

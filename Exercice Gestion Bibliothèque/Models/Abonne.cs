@@ -18,6 +18,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.nom != value)
                 {
                     this.nom = value;
+                    RaisePropertyChanged(() => Nom);
                 }
             }
         }
@@ -31,6 +32,8 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.prenom != value)
                 {
                     this.prenom = value;
+                    RaisePropertyChanged(() => Prenom);
+
                 }
             }
         }
@@ -43,6 +46,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.adresse != value)
                 {
                     this.adresse = value;
+                    RaisePropertyChanged(() => Adresse);
                 }
             }
         }
@@ -55,6 +59,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.telephone != value)
                 {
                     this.telephone = value;
+                    RaisePropertyChanged(() => Telephone);
                 }
             }
         }
@@ -67,6 +72,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.email != value)
                 {
                     this.email = value;
+                    RaisePropertyChanged(() => Email);
                 }
             }
         }
@@ -81,6 +87,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.dateAdhesion != value.ToString("yyyy-MM-dd"))
                 {
                     this.dateAdhesion = value.ToString("yyyy-MM-dd");
+                    RaisePropertyChanged(() => DateAdhesion);
                 }
             }
         }
@@ -212,21 +219,21 @@ namespace Exercice_Gestion_Bibliothèque.Models
 
         public Abonne()
         {
-            nom = "";
-            prenom = "";
-            email = "";
-            telephone = "";
+            //nom = "";
+            //prenom = "";
+            //email = "";
+            //telephone = "";
             dateAdhesion = DateTime.Now.ToString("yyyy-MM-dd");
 
         }
-        public Abonne(string _nom, string _prenom, string _telephone, string _email, DateTime _dateAdhesion)
-        {
-            this.nom = _nom;
-            this.prenom = _prenom;
-            this.telephone = _telephone;
-            this.email = _email;
-            this.dateAdhesion = _dateAdhesion.ToString("yyyy-MM-dd");
-        }
+        //public Abonne(string _nom, string _prenom, string _telephone, string _email, DateTime _dateAdhesion)
+        //{
+        //    this.nom = _nom;
+        //    this.prenom = _prenom;
+        //    this.telephone = _telephone;
+        //    this.email = _email;
+        //    this.dateAdhesion = _dateAdhesion.ToString("yyyy-MM-dd");
+        //}
 
         public string ToString()
         {
