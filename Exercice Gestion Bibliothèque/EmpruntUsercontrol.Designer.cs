@@ -39,8 +39,8 @@
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.id_exemplaire = new System.Windows.Forms.RichTextBox();
+            this.Textbox_disponibilite = new System.Windows.Forms.RichTextBox();
+            this.textbox_exemplaire = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -146,25 +146,24 @@
             this.richTextBox2.TabIndex = 18;
             this.richTextBox2.Text = "date_emprunt";
             // 
-            // richTextBox1
+            // Textbox_disponibilite
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.richTextBox1.Location = new System.Drawing.Point(382, 140);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(185, 50);
-            this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "disponibilté";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.Textbox_disponibilite.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Textbox_disponibilite.Location = new System.Drawing.Point(382, 140);
+            this.Textbox_disponibilite.Name = "Textbox_disponibilite";
+            this.Textbox_disponibilite.Size = new System.Drawing.Size(185, 50);
+            this.Textbox_disponibilite.TabIndex = 17;
+            this.Textbox_disponibilite.Text = "disponibilté";
             // 
-            // id_exemplaire
+            // textbox_exemplaire
             // 
-            this.id_exemplaire.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.id_exemplaire.Location = new System.Drawing.Point(382, 84);
-            this.id_exemplaire.Name = "id_exemplaire";
-            this.id_exemplaire.Size = new System.Drawing.Size(185, 50);
-            this.id_exemplaire.TabIndex = 16;
-            this.id_exemplaire.Text = "id_exemplaire";
-            this.id_exemplaire.TextChanged += new System.EventHandler(this.id_exemplaire_TextChanged);
+            this.textbox_exemplaire.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textbox_exemplaire.Location = new System.Drawing.Point(382, 84);
+            this.textbox_exemplaire.Name = "textbox_exemplaire";
+            this.textbox_exemplaire.Size = new System.Drawing.Size(185, 50);
+            this.textbox_exemplaire.TabIndex = 16;
+            this.textbox_exemplaire.Text = "Textbox_exemplaire";
+            this.textbox_exemplaire.TextChanged += new System.EventHandler(this.textbox_exemplaire_TextChanged);
             // 
             // label1
             // 
@@ -190,11 +189,12 @@
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.id_exemplaire);
+            this.Controls.Add(this.Textbox_disponibilite);
+            this.Controls.Add(this.textbox_exemplaire);
             this.Controls.Add(this.label1);
             this.Name = "EmpruntUsercontrol";
             this.Size = new System.Drawing.Size(1207, 548);
+            this.Load += new System.EventHandler(this.EmpruntUsercontrol_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,8 +213,8 @@
         private RichTextBox richTextBox4;
         private RichTextBox richTextBox3;
         private RichTextBox richTextBox2;
-        private RichTextBox richTextBox1;
-        private RichTextBox id_exemplaire;
+        private RichTextBox Textbox_disponibilite;
+        private RichTextBox textbox_exemplaire;
         private Label label1;
     }
 }

@@ -6,7 +6,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     {
         private string? nom;
         [JsonIgnore]
-        public string Nom
+        public string? Nom
         {
             get { return nom; }
             set

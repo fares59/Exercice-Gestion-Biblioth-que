@@ -31,12 +31,20 @@ namespace Exercice_Gestion_Bibliothèque
         Categorie? categorie;
         Mot_cle? mot_Cle;
 
+
+
+        private void EmpruntUsercontrol_Load(object sender, EventArgs e)
+        {
+            emprunt = Emprunt.jDA.GetById(1);
+            label2.DataBindings.Add("id_exemplaire", exemplaire, "id_exemplaire");
+            textbox_exemplaire.DataBindings.Add("id_exemplaire", exemplaire, "id_exemplaire");
+        }
         private void label2_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void id_exemplaire_TextChanged(object sender, EventArgs e)
+        private void textbox_exemplaire_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -46,16 +54,16 @@ namespace Exercice_Gestion_Bibliothèque
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            exemplaire = Exemplaire.jDA.GetById(1);
-            label2.DataBindings.Add("Text", livre, "Titre");
-            id_exemplaire.DataBindings.Add("Text", livre, "Titre");
+            emprunt.IdExemplaire = textbox_exemplaire.Text;
+            emprunt.IdExemplaire = Textbox_disponibilite.Text;
+            emprunt.IdExemplaire = richTextBox2.Text;
+            emprunt.IdExemplaire = richTextBox3.Text;
+            emprunt.IdExemplaire = richTextBox4.Text;
         }
+
+        
     }
 }

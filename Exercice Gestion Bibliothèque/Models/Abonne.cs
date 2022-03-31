@@ -116,10 +116,10 @@ namespace Exercice_Gestion_Bibliothèque.Models
             {
                 if (this.idCategorie != value?.Id)
                 {
-                    Categorie?.RemoveAbonne(this);
+                    Categorie?.RemoveAbonne(this); //supprimer l'article de cetteCategory
                     this.idCategorie = value?.Id;
-                    this.categorie = null; //need to reset Livre get
-                    Categorie?.AddAbonne(this);
+                    this.categorie = null; 
+                    Categorie?.AddAbonne(this); // ajouter l'article à ctte category
                 }
             }
         }

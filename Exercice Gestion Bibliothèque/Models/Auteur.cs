@@ -6,9 +6,9 @@ namespace Exercice_Gestion_Bibliothèque.Models
     internal class Auteur : ModelBase<Auteur>
     {
         [JsonProperty(PropertyName = "nom")]
-        private string nom;
+        private string? nom;
         [JsonIgnore]
-        public string Nom
+        public string? Nom
         {
             get { return nom; }
             set
@@ -16,7 +16,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
                 if (this.nom != value)
                 {
                     this.nom = value;
-                    RaisePropertyChanged(() => Nom)
+                    RaisePropertyChanged(() => Nom);
                 }
             }
         }
