@@ -5,7 +5,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
     internal class Emprunt : ModelBase<Emprunt>
     {
         [JsonProperty(PropertyName = "date_emprunt")]
-        private string dateEmprunt;
+        private string? dateEmprunt;
         [JsonIgnore]
         public DateTime DateEmprunt
         {
@@ -22,7 +22,7 @@ namespace Exercice_Gestion_Bibliothèque.Models
         }
 
         [JsonProperty(PropertyName = "date_sortie")]
-        private string dateSortie;
+        private string? dateSortie;
         [JsonIgnore]
         public DateTime DateSortie
         {
