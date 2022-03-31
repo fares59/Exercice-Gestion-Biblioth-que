@@ -57,8 +57,15 @@ namespace Exercice_Gestion_Bibliothèque
 
         private void button1_Click(object sender, EventArgs e)
         {
-            emprunt.IdExemplaire = textbox_exemplaire.Text;
-            emprunt.IdExemplaire = Textbox_disponibilite.Text;
+            textbox_exemplaire.Text = emprunt.IdExemplaire;
+            if (!emprunt.Deleted)
+            {
+                Textbox_disponibilite.Text = "Livre disponible";
+            }
+            else
+            {
+                Textbox_disponibilite.Text = "Livre indisponible";
+            };
             emprunt.IdExemplaire = richTextBox2.Text;
             emprunt.IdExemplaire = richTextBox3.Text;
             emprunt.IdExemplaire = richTextBox4.Text;
