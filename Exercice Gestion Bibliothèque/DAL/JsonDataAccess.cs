@@ -27,7 +27,7 @@ namespace Exercice_Gestion_Bibliothèque.DAL
             using (StreamReader reader = new StreamReader($"JsonData/{className}.json"))
             {
                 string jsonString = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<T>>(jsonString);
+                return JsonConvert.DeserializeObject<List<T>>(jsonString); // permet de créer un jsonobject à partir du objet type T
             }
         }
         public List<dynamic> LoadJsonData(string fileName)
@@ -35,7 +35,7 @@ namespace Exercice_Gestion_Bibliothèque.DAL
             using (StreamReader reader = new StreamReader($"JsonData/{fileName}.json"))
             {
                 string jsonString = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<dynamic>>(jsonString);
+                return JsonConvert.DeserializeObject<List<dynamic>>(jsonString); // permet de récupérer les liaisons 
             }
         }
         private void SaveJsonData()
