@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Exercice_Gestion_Bibliothèque.Models;
+using Exercice_Gestion_Bibliothèque.Views;
 
 namespace Exercice_Gestion_Bibliothèque
 {
