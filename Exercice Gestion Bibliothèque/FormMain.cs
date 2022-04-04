@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Exercice_Gestion_Bibliothèque.Models;
-using Exercice_Gestion_Bibliothèque.Views;
+// using Exercice_Gestion_Bibliothèque.Views;
 
 namespace Exercice_Gestion_Bibliothèque
 {
@@ -35,7 +35,7 @@ namespace Exercice_Gestion_Bibliothèque
 
         private void button4_Click(object sender, EventArgs e)
         {
-            emprunt_usercontrol Emprunt_usercontrol = new emprunt_usercontrol();
+            EmpruntUsercontrol Emprunt_usercontrol = new EmpruntUsercontrol();
             panel1.Controls.Clear();
             panel1.Controls.Add(Emprunt_usercontrol);
         }
